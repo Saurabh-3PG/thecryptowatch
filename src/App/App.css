@@ -1,0 +1,20 @@
+main{
+  margin-top: 106px;
+  margin-bottom: 100px;
+  padding: 48px 0;
+}
+ul {
+  margin: 8px 0 0;
+  list-style: none;
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.positionFixed{
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
