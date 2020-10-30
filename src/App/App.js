@@ -7,7 +7,7 @@ import Module from './Modules';
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import Home from './Modules/Home';
+import Home from './Modules/Home/Home';
 import Details from './Modules/Details';
 import PageNotFound from './PageNotFound'
 
@@ -37,9 +37,9 @@ class App extends Component {
     console.log(`[Main.js] render`)
     return (
       <div>
-        <Header />
         <Module>
           <BrowserRouter>
+            <Header />
             <Switch>
               <Route path='/' exact component={Home} />
               <Redirect from='/home' to="/" exact component={Home} />
@@ -48,9 +48,9 @@ class App extends Component {
                 <PageNotFound />
               </Route>
             </Switch>
+            <Footer />
           </BrowserRouter>
         </Module>
-        <Footer />
       </div>
     );
   }

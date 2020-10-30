@@ -1,0 +1,29 @@
+.app_detail_card{
+    padding: 36px;
+    .app_detail_card_header{
+        margin-bottom: 24px;
+        .coinName{
+            font-weight: bold;
+            margin-left: 16px;
+            span{
+                color: green;
+            }
+        }
+    }
+    .app_detail_card_body_boxes{
+        margin-bottom: 48px;
+        >div{
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: olivedrab;
+            padding: 24px 24px;
+            span{
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.5rem;
+                color: #3f51b5;
+            }
+        }
+    }
+}
