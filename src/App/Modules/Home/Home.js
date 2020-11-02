@@ -54,7 +54,7 @@ function Home() {
             <Container width="xl" className="maxwidth">
 
                 <div className={styles.AppPagination}>
-                    <Grid xs={12} container direction="row" alignItems="center" justify="center" id="app_pagination_container">
+                    <Grid container direction="row" alignItems="center" justify="center" id="app_pagination_container">
                         <Pagination
                             page={page}
                             onChange={handleChangePagination}
@@ -65,7 +65,7 @@ function Home() {
                 </div>
 
                 <div className={styles.Currency}>
-                    <Typography className={styles.CurrTxt} component="p" variant="caption" color="secondary" style={{fontWeight: 'bold'}}>{SELECT_UR_CURR_TXT}</Typography>
+                    <Typography className={styles.CurrTxt} component="p" variant="caption" color="secondary" style={{ fontWeight: 'bold' }}>{SELECT_UR_CURR_TXT}</Typography>
                     <CurrencyList buttonList={CURRENCY} onClickHandler={setCurrency} customeHandler={false} />
                 </div>
 
@@ -75,7 +75,13 @@ function Home() {
                         data && data.coins && data.coins.length > 0
                             ? Object.values(data.coins).map((coin, index) => {
                                 return (
-                                    <Detail key={index} id={coin.id} src={coin.iconUrl} name={coin.name} rank={coin.rank} sign={currencySign} price={coin.price} change={coin.change} color={coin.color} marketCap={coin.marketCap} />
+                                    <Detail
+                                        key={index}
+                                        id={coin.id} src={coin.iconUrl} name={coin.name} rank={coin.rank} sign={currencySign} price={coin.price} change={coin.change}
+                                        color={coin.color} marketCap={coin.marketCap} totalSupply={coin.totalSupply} numberOfExchanges={coin.numberOfExchanges}
+                                        numberOfMarkets={coin.numberOfMarkets}
+
+                                    />
                                 )
                             })
                             : null
