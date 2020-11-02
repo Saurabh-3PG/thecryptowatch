@@ -2,10 +2,11 @@ import React from 'react';
 import { PERCENT_CHNAGE_TXT } from '../../constant';
 import { CssBaseline, Grid, Typography, Box } from '@material-ui/core';
 import { Link } from "react-router-dom";
+import { ValueFormater } from '../../../helper/index';
 // import { Col, Card, ProgressBar } from 'react-bootstrap';
 // import { Badge } from 'reactstrap';
 function Detail(props) {
-    const { id, src, name, rank, sign, price, change, color, marketCap} = props;
+    const { id, src, name, rank, sign, price, change, color, marketCap, totalSupply, numberOfExchanges, numberOfMarkets} = props;
         return (
             <React.Fragment>
                 <CssBaseline />
@@ -15,7 +16,7 @@ function Detail(props) {
                 }}>
 
                     <Grid className="app_detail_card_header" container direction="row" alignItems="flex-start" justify="space-between">
-                        <Grid item>
+                        <Grid item xs={false}>
                             <Box style={{ display: 'flex', alignItems: 'center' }}>
                                 <Box>
                                     <img src={src} alt={`${name}`} height="70px" />
@@ -25,7 +26,7 @@ function Detail(props) {
                                 </Box>
                             </Box>
                         </Grid>
-                        <Grid item>
+                        <Grid item xs={false}>
                             <Box>
                                 <Box>
                                     <Typography component="p" variant="h2" color="secondary" className="app_detail_currentPrice" >
@@ -44,14 +45,14 @@ function Detail(props) {
                         </Grid>
                     </Grid>
                     <Grid className="app_detail_card_body">
-                        <Grid item container direction="row" alignItems="flex-start" justify="space-between" xs="12" className="app_detail_card_body_boxes">
-                            <Box >{marketCap}<br /><span>Market Cap</span></Box>
-                            <Box >{marketCap}<br /><span>Market Cap</span></Box>
-                            <Box >{marketCap}<br /><span>Market Cap</span></Box>
-                            <Box >{marketCap}<br /><span>Market Cap</span></Box>
+                        <Grid item container direction="row" alignItems="flex-start" justify="space-between" xs={12} className="app_detail_card_body_boxes">
+                            <Box >{ValueFormater(marketCap)}<br /><span>Market Cap</span></Box>
+                            <Box >{ValueFormater(totalSupply)}<br /><span>Total Supply</span></Box>
+                            <Box >{numberOfExchanges}<br /><span>No. Of Exchanges</span></Box>
+                            <Box >{numberOfMarkets}<br /><span>No. Of Markets</span></Box>
                         </Grid>
                     </Grid>
-                    <Grid className="app_detail_card_footer" container direction="row" alignItems="center" justify="center">
+                    <Grid className="app_detail_card_footer" container item xs={12} direction="row" alignItems="center" justify="center">
                         <Link to={{
                             pathname: `/details:id=${id}`,
                             detailsProps: {
