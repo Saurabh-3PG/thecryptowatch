@@ -6,7 +6,7 @@ import { CURRENCY, SELECT_UR_CURR_TXT, SELECT_UR_TIME } from '../../constant';
 import CurrencyList from '../../Components/CurrencyList'
 
 function Details(props) {
-    const [currencySign, setCurrencySign] = React.useState(props.location.detailsProps.currencySign ? props.location.detailsProps.currencySign : '$')
+    const [currencySign, setCurrencySign] = React.useState(props.location.detailsProps.sign ? props.location.detailsProps.sign : '$')
     const [base, setCurrency] = React.useState('USD');
     const [xUnit, setXUnit] = React.useState('second');
     // let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
