@@ -16,7 +16,7 @@ function Home() {
 
     const [data, setData] = React.useState(null);
     const [base, setCurrency] = React.useState('USD');
-    const [currencySign, setCurrencySign] = React.useState(null);
+    const [currencySign, setCurrencySign] = React.useState('$');
     const [offset, setOffset] = useState(0);
     const [total, setTotal] = useState(0);
     const [page, setPage] = useState(1)
